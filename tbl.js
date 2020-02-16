@@ -13,3 +13,29 @@ knex.schema.createTable("blog_deatils", (table) => {
 }).catch((err)=>{
     console.log(err)
 })
+
+knex.schema.createTable("superAdmin_tbl", (table) => {
+    table.increments("superAdmin_id")
+    table.string("superAdmin_name")
+    table.string("email")
+    table.string("password")
+
+}).then(()=>{
+    console.log("created tbl")
+}).catch((err)=>{
+    console.log(err)
+})
+// reg tbl
+knex.schema.createTable("admin_tbl", (table) => {
+    table.integer("registration_id")
+    table.string("boolean")
+    table.string("name")
+    table.string("email")
+    table.string("password")
+    table.increments("admin_id")
+
+}).then(()=>{
+    console.log("created tbl")
+}).catch((err)=>{
+    console.log(err)
+})
